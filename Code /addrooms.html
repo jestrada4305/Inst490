@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+   
+
+    <title>UMD On-Campus Housing</title>
+
+    <link href="" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <header>
+              <h4 class="text-white">Add Rooms </h4>
+       
+
+<!-- Contact Form with php action script - stores data entered by user-->
+      
+
+        	<p>Add Rooms </p>
+              <form role="form" action="addrooms.php" method="post">
+              <br style="clear:both">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="room-number" name="room_number" placeholder="Room Number" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="sq_footage" name="sq_footage" placeholder="Square Footage" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="has_windows" name="has_windows" placeholder="Does Room Have Windows" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="occupied" name="occupied" placeholder="Is the Room Occupied?" required>
+                  </div>
+                    <div class="form-group">
+                    <input type="text" class="form-control" id="building_map_num" name="building_map_num" placeholder="Building Map Number" required>
+                  </div>  <div class="form-group">
+                    <input type="text" class="form-control" id="has_lock" name="has_lock" placeholder="Does Builidng Has a Lock?" required>
+                  </div>
+                    <div class="form-group">
+                    <input type="text" class="form-control" id="has_carpet" name="has_carpet" placeholder="Does the Building Have Carpet?" required>
+                  </div>
+                    <div class="form-group">
+                    <input type="text" class="form-control" id="floor_level" name="floor_level" placeholder="What Floor Level" required>
+                  </div>
+                     <input type="button" id="submit" name="submit" class="btn btn-danger pull-right" value="Submit">  
+              </form>              
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>
