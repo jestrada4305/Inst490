@@ -11,5 +11,5 @@
 		//echo 'connected successfully to iSchool room database';
 
 	if ($conn->connect_error) die($conn->connect_error);
-	
+
 ?>
