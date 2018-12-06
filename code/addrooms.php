@@ -24,6 +24,6 @@
 	$floorlevel = $_POST['floor_level'];
 
 
-	$sql = "INSERT INTO form (room_number, sq_footage, has_windows, occupied, building_map_num, has_lock, has_carpet, floor_level) VALUES ('$roomnumber', '$sqfootage', '$window', '$occupied', '$buildingnum', '$lock', '$carpet', '$floorlevel');";
+	$sql = "INSERT INTO rooms (room_number, sq_footage, has_windows, occupied, building_map_num, has_lock, has_carpet, floor_level) VALUES ('$roomnumber', '$sqfootage', '$window', '$occupied', '$buildingnum', '$lock', '$carpet', '$floorlevel');";
 	$result = $conn->query($sql);
  ?>

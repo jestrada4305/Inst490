@@ -3,7 +3,7 @@
 		if(isset($_POST['search']))
 		{
 			$valueToSearch = $_POST['valueToSearch'];
-			$query = "SELECT * FROM `rooms` WHERE CONCAT(`room_number`, `sq_footage`, `has_windows`, `occupied`, `building_map_num`, `has_lock`, `has_carpet`, `floor_level`) LIKE '%".$valueToSearch."%'";
+			$query = "SELECT * FROM `rooms` WHERE CONCAT(`room_number`, `building_id`, `sq_footage`, `floor_level`,`has_windows`, `has_carpet`, `has_lock`, `occupied`, `usage`) LIKE '%".$valueToSearch."%'";
     		$search_result = filterTable($query);
     
 
@@ -66,7 +66,7 @@ body, html {
       <a href="addrooms.html" class="w3-button w3-block w3-black">ADD ROOMS</a>
     </div>
     <div class="w3-col s3">
-      <a href="editrooms.html" class="w3-button w3-block w3-black">EDIT ROOMS</a>
+      <a href="editrooms.php" class="w3-button w3-block w3-black">EDIT ROOMS</a>
     </div>
     <div class="w3-col s3">
       <a href="filter.php" class="w3-button w3-block w3-black">FILTER ROOMS</a>
@@ -75,15 +75,7 @@ body, html {
 </div>
 
 <!-- Header with image -->
-<header class="bgimg w3-display-container wf3-grayscale-min" id="home">
-  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-    <span class="w3-tag">Facilities Management</span>
-  </div>
 
-  <div class="w3-display-bottomright w3-center w3-padding-large">
-    <span class="w3-text-white">215</span>
-  </div>
-</header>
 
 <!-- Add a background color and large text to the whole page -->
 <div class="w3-sand w3-grayscale w3-large">
@@ -100,24 +92,27 @@ body, html {
        				<tr>
 
        					<th> Room Number</th>
+                <th> Building ID</th>
        					<th> Square Footage</th>
+                <th> Floor Level </th>
        					<th> Windows</th>
+                <th> Carpet</th>
+                <th> Lock</th>
        					<th> Occupied</th>
-       					<th> Building Map Number</th>
-       					<th> Lock</th>
-       					<th> Carpet</th>
-       					<th> Floor Level </th>
+                <th> Usage</th>
+
        				</tr>
        				<?php while($row = mysqli_fetch_array($search_result)): ?>
        				<tr>
        					<td><?php echo $row["room_number"];?></td>
+            <td><?php echo $row["building_id"];?></td>
 						<td><?php echo $row["sq_footage"];?></td>
+            <td><?php echo $row["floor_level"];?></td>
 						<td><?php echo $row["has_windows"];?></td>
+            <td><?php echo $row["has_carpet"];?></td>
+            <td><?php echo $row["has_lock"];?></td>
 						<td><?php echo $row["occupied"];?></td>
-						<td><?php echo $row["building_map_num"];?></td>
-						<td><?php echo $row["has_lock"];?></td>
-						<td><?php echo $row["has_carpet"];?></td>
-						<td><?php echo $row["floor_level"];?></td>
+						<td><?php echo $row["usage"];?></td>
 
        				</tr>
        				<?php endwhile;?>
